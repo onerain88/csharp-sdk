@@ -4,7 +4,7 @@ using LeanCloud;
 namespace Storage.Test {
     public class ExceptionTest {
         [Test]
-        public void LeanCloudException() {
+        public void Exception() {
             try {
                 throw new LCException(123, "hello, world");
             } catch (LCException e) {

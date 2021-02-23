@@ -40,7 +40,7 @@ namespace Realtime.Test {
         }
 
         [Test]
-        public async Task OpenAndCloseByLCUser() {
+        public async Task OpenAndCloseByUser() {
             LCUser user = await LCUser.Login(USERNAME1, PASSWORD1);
             LCIMClient client = new LCIMClient(user);
             await client.Open();

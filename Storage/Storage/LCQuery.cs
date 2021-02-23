@@ -307,7 +307,7 @@ namespace LeanCloud.Storage {
         }
 
         /// <summary>
-        /// Includes the ALC or not.
+        /// Includes the ACL or not.
         /// </summary>
         public bool IncludeACL {
             get {

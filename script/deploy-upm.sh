@@ -25,7 +25,7 @@ deploy() {
   mkdir $pluginsPath
 
   # 同步 AOT 库
-  rsync -avz $aotPath/ $pluginsPath/
+  cp -r $aotPath/. $pluginsPath
 
   # 拷贝平台库
   cp $unityReleasePath/$storage.$unity.dll $pluginsPath/
@@ -37,7 +37,8 @@ deploy() {
   cat ./Unity/$service.package.json | sed 's/__VERSION__/'$version'/' > $packagePath
 
   # 使用 Unity Editor 打开工程，生成 .meta 文件
-  /Applications/Unity/Unity.app/Contents/MacOS/Unity -batchmode -nographics -silent-crashes -logFile -projectPath $unityProjectPath -quit
+  # /Applications/Unity/Unity.app/Contents/MacOS/Unity -batchmode -nographics -silent-crashes -logFile -projectPath $unityProjectPath -quit
+  /Applications/Unity/Unity.app/Contents/MacOS/Unity -batchmode -nographics -silent-crashes -logFile $unityProjectPath -quit
 
   # 创建发布目录
   upmPath=upm-$service

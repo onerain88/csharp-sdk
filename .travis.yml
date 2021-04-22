@@ -4,7 +4,7 @@ solution: csharp-sdk.sln
 
 cache:
   directories:
-    - $UNITY_DOWNLOAD_CACHE
+    - ./unity_download_cache
 
 install:
   - nuget restore csharp-sdk.sln

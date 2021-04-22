@@ -1,12 +1,22 @@
+os: osx
 language: csharp
 solution: csharp-sdk.sln
+
+cache:
+  directories:
+    - $UNITY_DOWNLOAD_CACHE
+
 install:
   - nuget restore csharp-sdk.sln
+  - bash ./script/install-unity.sh
+
 addons:
   apt:
     update: true
+
 before_deploy:
   - bash ./script/package.sh
+
 deploy:
   provider: releases
   api_key:
@@ -21,6 +31,7 @@ deploy:
   on:
     repo: leancloud/csharp-sdk
     tags: true
+
 after_deploy:
   - sudo apt-get install doxygen
   - doxygen Doxyfile

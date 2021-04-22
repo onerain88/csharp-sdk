@@ -331,3 +331,7 @@ ASALocalRun/
 
 !Common/Common/Log/
 Doc/
+
+Unity/UnityProject/Logs/
+Unity/UnityProject/Library/
+Unity/UnityProject/Temp/

@@ -15,8 +15,6 @@ releasePath=bin/Release/netstandard2.0
 standardReleasePath=./$storage/$storage.$standard/$releasePath
 unityReleasePath=./$storage/$storage.$unity/$releasePath
 
-echo $standardReleasePath/$storage.$standard.dll
-
 pack() {
     local path=$1;
     local dir=$2;

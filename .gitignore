@@ -335,4 +335,5 @@ Doc/
 Unity/UnityProject/Logs/
 Unity/UnityProject/Library/
 Unity/UnityProject/Temp/
+!Unity/UnityProject/Packages/*
 !Unity/UnityProject/*.meta

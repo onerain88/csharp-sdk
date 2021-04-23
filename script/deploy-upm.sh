@@ -37,7 +37,7 @@ deploy() {
   cat ./Unity/$service.package.json | sed 's/__VERSION__/'$version'/' > $packagePath
 
   # 使用 Unity Editor 打开工程，生成 .meta 文件
-  /Applications/Unity/Unity.app/Contents/MacOS/Unity -batchmode -quit -nographics -silent-crashes -logFile log -projectPath=$unityProjectPath ; cat log
+  /Applications/Unity/Unity.app/Contents/MacOS/Unity -batchmode -force-free -quit -nographics -silent-crashes -logFile log -projectPath=$unityProjectPath ; cat log
 
   # 创建发布目录
   upmPath=upm-$service

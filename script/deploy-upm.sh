@@ -10,30 +10,27 @@ REPO_GIT_URL="git@github.com:onerain88/csharp-sdk.git"
 
 UNITY_PATH="/Applications/Unity/Hub/Editor/2020.3.5f1c1/Unity.app/Contents/MacOS/Unity"
 
-UNITY_PROJECT_ASSETS_PATH=./Unity/UnityProject/Assets
-
 # 从 Releases 下载
 download() {
   releaseURL=$1
-  service=$2
+  upmPath=$2
   # Plugins
   zipFile=`basename "$releaseURL"`
   curl -L $releaseURL -o $zipFile
-  unzip $zipFile -d $service
+  unzip $zipFile -d $upmPath
   rm $zipFile
 }
 
 # 去掉依赖中的重复文件
 diff() {
-  dstPath=$1
-  srcPath=$2
+  srcPath=$1
+  dstPath=$2
   for df in `ls $dstPath`:
   do
     for sf in `ls $srcPath`:
     do
       if cmp -s $dstPath/$df $srcPath/$sf
       then
-        echo $dstPath/$df
         rm $dstPath/$df
         break
       fi
@@ -54,19 +51,25 @@ deploy() {
   upmPath=$1
   tagPrefix=$1
 
+  # 创建 Unity 工程
+  unityProject=./Unity/UnityProject
+  $UNITY_PATH -batchmode -quit -createProject $unityProject
+
   # 将 UPM 包移动到 Unity Project 下
-  mv $upmPath/* $UNITY_PROJECT_ASSETS_PATH/
+  unityAssetsPath=$unityProject/Assets
+  mv $upmPath/* $unityAssetsPath/
 
   # 使用 Unity Editor 打开工程，生成 .meta 文件
-  $UNITY_PATH -batchmode -force-free -quit -nographics -silent-crashes -projectPath ./Unity/UnityProject
+  $UNITY_PATH -batchmode -quit -nographics -silent-crashes -projectPath $unityProject
 
-  mkdir $upmPath
+  mv $unityAssetsPath/* $upmPath/
 
-  mv $UNITY_PROJECT_ASSETS_PATH/* $upmPath/
+  # 移除临时 Unity 工程
+  rm -rf $unityProject
 
   # push 到 GitHub
   upmTag=$tagPrefix-$version
-  cd $upmPath
+  cd $upmPath $unityProject
 
   git init
   git config user.name "leancloud-bot";
@@ -86,16 +89,18 @@ if [[ !($version =~ $VERSION_REGEX) ]]; then
   exit
 fi
 
-upmStorage=upm-storage
-upmRealtime=upm-realtime
+upmStoragePath="upm-storage"
+upmRealtimePath="upm-realtime"
 
-download $STORAGE_RELEASE_URL $upmStorage
-download $REALTIME_RELEASE_URL $upmRealtime
+mkdir $upmStorage && mkdir $upmRealtime
 
-diff $upmRealtime/Plugins $upmStorage/Plugins
+download $STORAGE_RELEASE_URL $upmStoragePath
+download $REALTIME_RELEASE_URL $upmRealtimePath
 
-package ./Unity/storage.package.json $upmStorage
-package ./Unity/realtime.package.json $upmRealtime
+diff $upmStoragePath/Plugins $upmRealtimePath/Plugins 
 
-deploy $upmStorage
-deploy $upmRealtime
+package ./Unity/storage.package.json $upmStoragePath
+package ./Unity/realtime.package.json $upmRealtimePath
+
+deploy $upmStoragePath
+deploy $upmStoragePath

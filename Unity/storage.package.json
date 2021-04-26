@@ -4,12 +4,11 @@
   "displayName": "LeanCloud Storage",
   "description": "This is leancloud storage package",
   "unity": "2019.1",
-  "unityRelease": "0b5",
   "dependencies": {},
   "keywords": ["LeanCloud", "Storage"],
   "author": {
     "name": "LeanCloud",
-    "email": "zyu@leancloud.rocks",
-    "url": "https://www.leancloud.cn/"
+    "email": "support@leancloud.rocks",
+    "url": "https://leancloud.cn/"
   }
 }

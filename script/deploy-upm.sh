@@ -69,7 +69,7 @@ deploy() {
 
   # push 到 GitHub
   upmTag=$tagPrefix-$version
-  cd $upmPath $unityProject
+  cd $upmPath
 
   git init
   git config user.name "leancloud-bot";

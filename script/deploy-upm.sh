@@ -103,4 +103,4 @@ package ./Unity/storage.package.json $upmStoragePath
 package ./Unity/realtime.package.json $upmRealtimePath
 
 deploy $upmStoragePath
-deploy $upmStoragePath
+deploy $upmRealtimePath

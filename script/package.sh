@@ -23,6 +23,8 @@ pack() {
     local output=./release/$3;
     local platform=$4;
     mkdir $dir
+    echo $path
+    echo $dir
     rsync -avz $path $dir
     if [[ $platform == standard ]] ; then
         cp $standardReleasePath/$storage.$standard.dll $dir

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 prefix=LeanCloud-SDK
 

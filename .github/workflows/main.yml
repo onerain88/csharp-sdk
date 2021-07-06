@@ -29,8 +29,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Doc
       uses: mattnotmitt/doxygen-action@v1
-      with:
-          working-directory: './'
-          doxyfile-path: 'docs/html'
     - name: Deploy doc
       run: bash ./script/deploy.sh

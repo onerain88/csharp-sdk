@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 prefix=LeanCloud-SDK
 
@@ -25,7 +25,7 @@ pack() {
     mkdir $dir
     echo $path
     echo $dir
-    cp -r $path $dir
+    rsync -avz $path $dir
     if [[ $platform == standard ]] ; then
         cp $standardReleasePath/$storage.$standard.dll $dir
         cp $standardReleasePath/$storage.$standard.pdb $dir

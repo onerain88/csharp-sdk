@@ -19,7 +19,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --configuration Release
     - run: sh ./script/package.sh
     - name: Release
       uses: fnkr/github-action-ghr@v1

@@ -1,6 +1,0 @@
-var searchData=
-[
-  ['keys',['Keys',['../interfaceLeanCloud_1_1Storage_1_1Internal_1_1IStorageDictionary_3_01TKey_00_01TValue_01_4.html#a692a0af6fd97bc5eb1d99d80d171d3e7',1,'LeanCloud.Storage.Internal.IStorageDictionary&lt; TKey, TValue &gt;.Keys()'],['../classLeanCloud_1_1Storage_1_1Internal_1_1FlexibleDictionaryWrapper_3_01TOut_00_01TIn_01_4.html#a7586a54c614364515fc3f725968ccadf',1,'LeanCloud.Storage.Internal.FlexibleDictionaryWrapper&lt; TOut, TIn &gt;.Keys()'],['../classLeanCloud_1_1AVObject.html#aab48edcd12782856c6fae77bdc570e72',1,'LeanCloud.AVObject.Keys()'],['../classLeanCloud_1_1Realtime_1_1AVIMConversation.html#a455e0a2c3789cbb407d435305821070a',1,'LeanCloud.Realtime.AVIMConversation.Keys()'],['../classLeanCloud_1_1LiveQuery_1_1AVLiveQueryEventArgs_3_01T_01_4.html#a3591bd70aacc35d482f6583e4f1c98b4',1,'LeanCloud.LiveQuery.AVLiveQueryEventArgs&lt; T &gt;.Keys()']]],
-  ['kickedby',['KickedBy',['../classLeanCloud_1_1Realtime_1_1AVIMOnMembersLeftEventArgs.html#afc0da3f722275ce59b2713e491f2a1ef',1,'LeanCloud.Realtime.AVIMOnMembersLeftEventArgs.KickedBy()'],['../classLeanCloud_1_1Realtime_1_1AVIMOnKickedEventArgs.html#af340622b25f044ccd92f699790f01f72',1,'LeanCloud.Realtime.AVIMOnKickedEventArgs.KickedBy()']]],
-  ['kilometers',['Kilometers',['../structLeanCloud_1_1AVGeoDistance.html#a231421d08c5131bfe7f09fbaa4bda795',1,'LeanCloud::AVGeoDistance']]]
-];

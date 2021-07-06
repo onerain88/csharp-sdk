@@ -1,5 +1,0 @@
-var searchData=
-[
-  ['query',['Query',['../classLeanCloud_1_1AVRelation_3_01T_01_4.html#a88c5821d988de055f44d3ad70bbced1f',1,'LeanCloud.AVRelation&lt; T &gt;.Query()'],['../classLeanCloud_1_1AVRole.html#a32d6f585848bc050b2d4be0f39725686',1,'LeanCloud.AVRole.Query()'],['../classLeanCloud_1_1AVSession.html#ab096c9c854105744ff8d3c70348e2135',1,'LeanCloud.AVSession.Query()'],['../classLeanCloud_1_1AVUser.html#a96ac7123d6977877b0c7bcbf4f50ab0d',1,'LeanCloud.AVUser.Query()'],['../classLeanCloud_1_1Realtime_1_1AVIMMessagePager.html#ae75f3d908e26a80fe1e7dd43ae3fd342',1,'LeanCloud.Realtime.AVIMMessagePager.Query()'],['../classLeanCloud_1_1LiveQuery_1_1AVLiveQuery_3_01T_01_4.html#a92dcaf09254b14262c2ab489c456fdb8',1,'LeanCloud.LiveQuery.AVLiveQuery&lt; T &gt;.Query()']]],
-  ['querycontroller',['QueryController',['../classLeanCloud_1_1Storage_1_1Internal_1_1AVPlugins.html#a31317276dbc548add32aac13e8932ba9',1,'LeanCloud.Storage.Internal.AVPlugins.QueryController()'],['../interfaceLeanCloud_1_1Storage_1_1Internal_1_1IAVCorePlugins.html#a21f985c415312fd5360e1994d8646596',1,'LeanCloud.Storage.Internal.IAVCorePlugins.QueryController()']]]
-];
